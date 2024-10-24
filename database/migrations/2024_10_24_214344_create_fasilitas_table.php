@@ -4,15 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInstansisTable extends Migration
+class CreateFasilitasTable extends Migration
 {
     public function up()
     {
-        Schema::create('instansi', function (Blueprint $table) {
-            $table->id('id_instansi');
-            $table->string('nama_instansi', 255);
-            $table->binary('gambar_instansi');
-            $table->text('url');
+        Schema::create('fasilitas', function (Blueprint $table) {
+            $table->id('id_fasilitas');
+            $table->string('nama_fasilitas', 255);
+            $table->text('desc_fasilitas');
+            $table->string('gambar_fasilitas');
             $table->unsignedBigInteger('id_user');
             $table->timestamps();
 
@@ -22,6 +22,6 @@ class CreateInstansisTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('instansi');
+        Schema::dropIfExists('fasilitas');
     }
 }

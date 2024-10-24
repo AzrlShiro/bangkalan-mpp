@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,7 +16,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nama_user', // Sesuaikan dengan kolom di database
         'email',
         'password',
     ];
@@ -33,15 +32,52 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * The attributes that should be cast to native types.
      *
-     * @return array<string, string>
+     * @var array<string, string>
      */
-    protected function casts(): array
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+    /**
+     * Get the profil associated with the user.
+     */
+    public function profil()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->hasOne(Profil::class, 'user_id', 'id_user');
+    }
+
+    /**
+     * Get the fasilitas for the user.
+     */
+    public function fasilitas()
+    {
+        return $this->hasMany(Fasilitas::class, 'user_id', 'id_user');
+    }
+
+    /**
+     * Get the pelayanan for the user.
+     */
+    public function pelayanan()
+    {
+        return $this->hasMany(Pelayanan::class, 'user_id', 'id_user');
+    }
+
+    /**
+     * Get the instansi for the user.
+     */
+    public function instansi()
+    {
+        return $this->hasMany(Instansi::class, 'user_id', 'id_user');
+    }
+
+    /**
+     * Get the galery for the user.
+     */
+    public function galery()
+    {
+        return $this->hasMany(Syarat::class, 'user_id', 'id_user');
     }
 }
