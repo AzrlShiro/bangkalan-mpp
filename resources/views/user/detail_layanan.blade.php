@@ -46,15 +46,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Beranda</a>
-                <a href="layanan.html" class="nav-item nav-link">Layanan</a>
-                <a href="fasilitas.html" class="nav-item nav-link">Fasilitas</a>
-                <a href="kontak.html" class="nav-item nav-link">Kontak</a>
+                <a href="{{ url('home') }}" class="nav-item nav-link">Beranda</a>
+                <a href="{{ url('layanan') }}" class="nav-item nav-link active">Layanan</a>
+                <a href="{{ url('fasilitas') }}" class="nav-item nav-link">Fasilitas</a>
+                <a href="{{ url('kontak') }}" class="nav-item nav-link">Kontak</a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
- 
+
 
 
     <div class="container mt-5">
@@ -177,7 +177,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Service Hours -->
             <div class="col-lg-4">
                 <div class="card shadow-lg border-0 rounded-4">
@@ -220,7 +220,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 

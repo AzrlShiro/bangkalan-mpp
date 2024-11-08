@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Woody - Carpenter Website Template</title>
+    <title>Fasilitas MPP</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -77,10 +77,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Beranda</a>
-                <a href="layanan.html" class="nav-item nav-link">Layanan</a>
-                <a href="fasilitas.html" class="nav-item nav-link">Fasilitas</a>
-                <a href="kontak.html" class="nav-item nav-link">Kontak</a>
+                <a href="{{ url('home') }}" class="nav-item nav-link">Beranda</a>
+                <a href="{{ url('layanan') }}" class="nav-item nav-link">Layanan</a>
+                <a href="{{ url('fasilitas') }}" class="nav-item nav-link active">Fasilitas</a>
+                <a href="{{ url('kontak') }}" class="nav-item nav-link">Kontak</a>
             </div>
             <!-- <a href="login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">LOGIN<i
                     class="fa fa-arrow-right ms-3"></i></a> -->
@@ -97,7 +97,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
                     <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">Service</li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Facility</li>
                 </ol>
             </nav>
         </div>

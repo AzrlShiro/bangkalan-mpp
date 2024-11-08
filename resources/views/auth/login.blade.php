@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Login')</title>
     <link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+        rel="stylesheet" />
 
 </head>
 
@@ -62,7 +65,7 @@
         <input type="checkbox" id="check">
         <div class="login form">
             <header>
-                <img src="default/img/logo.png" alt="Logo"/>
+                <img src="default/img/logo.png" alt="Logo" />
                 <span>Login</span>
             </header>
             @if (session('success'))
@@ -74,7 +77,8 @@
                 @csrf
                 <div class="field email">
                     <div class="input-area">
-                        <input id="email" type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" required>
+                        <input id="email" type="email" name="email" placeholder="Email Address"
+                            value="{{ old('email') }}" required>
                         <i class="icon fas fa-envelope"></i>
                     </div>
                     @error('email')
@@ -94,7 +98,7 @@
                         </div>
                     @enderror
                 </div>
-                
+
                 {{-- <div class="g-recaptcha" data-sitekey="6LemzjQqAAAAAHsWYUrq3nug0m-b1Iv2g8Hm1GXb"></div> --}}
                 {{-- <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.sitekey') }}"></div> --}}
                 <button type="submit"><span>Login</span></button>
@@ -102,7 +106,7 @@
             <div class="signup">
                 <span>Don't have an account? <a href="{{ route('register') }}">Signup</a></span>
             </div>
-            
+
         </div>
         {{-- <div class="registration form">
             <header>
@@ -165,7 +169,7 @@
     </div>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script  cript src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script cript src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </body>
 

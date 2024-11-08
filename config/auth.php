@@ -15,10 +15,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins', // Menggunakan provider admins
-        ],
+        // 'admin' => [
+        //     'driver' => 'session',
+        //     'provider' => 'admins', // Menggunakan provider admins
+        // ],
     ],
 
 
@@ -29,10 +29,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class, // Model untuk Admin
-        ],
+        // 'admins' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Admin::class, // Model untuk Admin
+        // ],
 
     ],
 

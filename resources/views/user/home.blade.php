@@ -310,7 +310,7 @@
     @section('content')
         <h1>Daftar Instansi</h1>
         <div class="row">
-            @foreach ($instansis as $instansi)
+            {{-- @foreach ($instansis as $instansi)
                 <div class="col-md-4"> <!-- Atur kolom sesuai kebutuhan -->
                     <div class="card">
                         <img src="{{ asset('storage/' . $instansi->gambar) }}" alt="{{ $instansi->nama_instansi }}"
@@ -320,7 +320,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
     @endsection
 

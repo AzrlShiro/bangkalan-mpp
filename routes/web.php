@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CaptchaController;
@@ -9,27 +10,27 @@ use App\Models\SubPelayanan;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('user.home');
 });
-Route::get('/about', function () {
-    return view('about');
+Route::get('/fasilitas', function () {
+    return view('user.fasilitas');
 });
 Route::get('/pelayanan', function () {
     return view('pelayanan');
 });
-Route::get('/pelayanan', function () {
-    $nama_sub = SubPelayanan::where('id_sub')->pluck('nama_sub');
-    return view('pelayanan', ['nama_sub' => $nama_sub]);
+Route::get('/layanan', function () {
+    $nama_sub = SubPelayanan::where('id_sub', 1)->pluck('nama_sub');
+    return view('user.layanan', ['nama_sub' => $nama_sub]);
 });
 
 Route::get('/instansi', function () {
     return view('instansi');
 });
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/kontak', function () {
+    return view('user.kontak');
 });
-Route::get('/visi', function () {
-    return view('visi');
+Route::get('/detail_layanan', function () {
+    return view('user.detail_layanan');
 });
 Route::get('/motto', function () {
     return view('motto');
@@ -110,3 +111,7 @@ Route::middleware('auth')->group(function () {
     // Route::put('manage-galeri/{id}', [AdminController::class, 'updateGaleri'])->name('manage-galeri.update');
     // Route::delete('manage-galeri/{id}', [AdminController::class, 'destroyGaleri'])->name('manage-galeri.destroy');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
